@@ -8,7 +8,7 @@ def test_greeting():
     name = "Анна"
     age = 25
     # TODO Сформируйте нужную строку
-    output = "Привет, {a}! Тебе {b} лет.".format(a=name,b=age)
+    output = f"Привет, {name}! Тебе {age} лет."
     print(output)
 
     # Проверяем результат
@@ -39,7 +39,7 @@ def test_circle():
     """
     r = 23
     # TODO сосчитайте площадь
-    area = math.pi * (23 ** 2)
+    area = math.pi * ( r ** 2)
     print(area)
 
     assert area == 1661.9025137490005
@@ -57,7 +57,7 @@ def test_random_list():
     """
     # TODO создайте список
     l = random.sample(range(1, 101), 10)
-    l.sort(reverse=False)
+    l.sort()
 
     assert len(l) == 10
     assert all(l[i] <= l[i + 1] for i in range(len(l) - 1))
@@ -69,7 +69,7 @@ def test_unique_elements():
     """
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
     # TODO удалите повторяющиеся элементы
-    l = list(set([1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]))
+    l = list(set(l))
 
     assert isinstance(l, list)
     assert len(l) == 10
